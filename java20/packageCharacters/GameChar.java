@@ -28,7 +28,7 @@ public abstract class GameChar implements IGameChar{
     // キャラクターの各表示メッセージ
     public void newMsg(){ System.out.printf("%sがあらわれた！\n", cName);};
     public void attackMsg(){ System.out.printf("%sのこうげき！\n", cName);};
-    public void gurdMsg(){ System.out.printf("%sはみをまもった！", cName);};
+    public void guardMsg(){ System.out.printf("%sはみをまもった！", cName);};
     public void damageMsg(){ System.out.printf("%dのダメージ！\n", cName);};
     public void endMsg(){ System.out.printf("%sは死んでしまった！\n", cName);};
 
@@ -77,7 +77,7 @@ public abstract class GameChar implements IGameChar{
         // ダメージ値を 0～bound の乱数で取得
         int damage = new Random().nextInt(bound);
         if(damage<=0){damage=0;} // ダメージ値はマイナスにならないよう調整 
-        this.gurdMsg(); // 身構えるメッセージ
+        this.guardMsg(); // 身構えるメッセージ
         System.out.printf("%d のダメージ！\n", damage);
         this.hp -= damage;  // 現在のHPからダメージ値を引く
         // もしHPが0以下になったら、死亡フラグを立ててメッセージを表示、フラグをリターン
